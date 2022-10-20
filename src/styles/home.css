@@ -1,0 +1,42 @@
+ /*.hero__section{
+    background-image: url('../assets/hero_img.jpg') ;
+    background-repeat: no-repeat;
+    
+}
+*/
+
+.hero__section h2{
+   color: black;
+   font-size: 2.5rem;
+   font-weight: 600;
+   margin: 20px 0px;
+
+}
+
+.hero__section p{
+    line-height: 28px;
+}
+
+button{
+    border: none; 
+    outline: none;
+    border-radius: 5px;
+   
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 20px;
+}
+
+bouton a:hover{
+    color: azure;
+}
+
+/*------carousel-----------*/
+
+
+
+.carousel-item img{
+    border-radius: 0.8rem;
+    height: 25rem ;
+    width: 50%;
+ }

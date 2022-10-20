@@ -34,10 +34,10 @@ const Header = () => {
         
           <div className='logo'>
           
-          
+          {/*probleme avec taille image 
           <img src={logo} alt='logo'/>
-            <h1>DREAM ESCALE</h1>
-            
+          */}
+          <h1>DREAM ESCALE</h1>
           </div>
           <div className='navigation'>
             <ul className='menu'>

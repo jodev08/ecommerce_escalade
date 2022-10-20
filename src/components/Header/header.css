@@ -57,17 +57,18 @@
 
 .badge{
     
-    top: 50%;
+    top: 20%;
     right: 0%;
     width: 13px;
     height: 13px;
     content: "";
     background:black;
     color: white;
-    border-radius: 50px;
+    border-radius: 50%;
     font-size: 0.8rem;
     font-weight: 600;
     z-index: 10;
+    
 }
 
 .nav__icons span{

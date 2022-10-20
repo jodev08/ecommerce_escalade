@@ -1,0 +1,16 @@
+ .services__item{
+    padding: 20px;
+    background: beige;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    border-radius: 5px;
+ }
+
+ .services__item span{
+    font-size: 2.2rem;
+    background: green;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+ }
