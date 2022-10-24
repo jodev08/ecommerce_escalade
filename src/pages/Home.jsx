@@ -1,10 +1,12 @@
-import React from 'react'
+import React,  {useState, useEffect} from 'react'
 import '../styles/home.css'
 import Helmet from '../components/Helmet/Helmet'
 import { Container, Row, Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import Services from '../components/services/Services'
 import ProductList from '../components/Ui/ProductList'
+import products from '../assets/data/products'
+
 
 import CA1 from '../assets/carousel/carousel1.jpg'
 import CA2 from '../assets/carousel/carousel2.jpg'
@@ -12,9 +14,23 @@ import CA3 from '../assets/carousel/carousel3.jpg'
 
 
 
+
+
 const Home = () => {
 
+
+  const [data, setData] = useState(products) 
   const year = new Date().getFullYear()
+  
+  useEffect(() =>{
+    const filteredProducts = products.filter((item)  =>item.category === 'shoes'
+    );
+     setData(filteredProducts)
+  
+    },[]);
+  
+
+
   return <Helmet title={"Home"}>
            <section className='hero__section'>
             <Container>
@@ -79,9 +95,22 @@ const Home = () => {
                     Produit tendance 
                   </h2>
                 </Col>
-                <ProductList/>
+                <ProductList data={data}/>
               </Row>
             </Container>
+           </section>
+
+           <section className='best__sales'>
+           <Row>
+                <Col lg='12' className='text-center'>
+                  <h2 className='section__title'>
+                    meilleurs ventes
+                  </h2>
+                </Col>
+                
+              </Row>
+
+
            </section>
 
           

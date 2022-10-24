@@ -1,16 +1,17 @@
 import React from 'react'
-import ProductsCard from './ProductsCart'
+import ProductsCart from './ProductsCart'
 
-const ProductList = () => {
+const ProductList = ({data}) => {
   return (
     <>
-        <ProductsCard/>
-        <ProductsCard/>
-        <ProductsCard/>
-        <ProductsCard/>
+        {
+        
+        data.map((item) => (
+          <ProductsCart item={item} />
+        ))}
       
     </>
-  )
-}
+  );
+};
 
 export default ProductList
