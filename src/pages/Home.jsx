@@ -19,13 +19,19 @@ import CA3 from '../assets/carousel/carousel3.jpg'
 const Home = () => {
 
 
-  const [data, setData] = useState(products) 
+  const [trendingProducts, setTrendingProducts] = useState([]) 
+  const [bestProducts, setBestProducts] = useState([]) 
   const year = new Date().getFullYear()
   
   useEffect(() =>{
-    const filteredProducts = products.filter((item)  =>item.category === 'shoes'
+    const filteredTrendingProducts = products.filter((item)  =>item.category === 'shoes'
     );
-     setData(filteredProducts)
+
+    const filteredBestProducts = products.filter((item)  =>item.category === 'accessoire'
+    );
+
+    setTrendingProducts(filteredTrendingProducts)
+    setBestProducts(filteredBestProducts)
   
     },[]);
   
@@ -95,7 +101,7 @@ const Home = () => {
                     Produit tendance 
                   </h2>
                 </Col>
-                <ProductList data={data}/>
+                <ProductList data={trendingProducts}/>
               </Row>
             </Container>
            </section>
@@ -107,7 +113,7 @@ const Home = () => {
                     meilleurs ventes
                   </h2>
                 </Col>
-                
+                <ProductList data={bestProducts}/>
               </Row>
 
 
