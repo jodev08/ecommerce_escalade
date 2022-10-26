@@ -1,0 +1,30 @@
+.footer{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background: blue;
+}
+
+.footer__text{
+    line-height: 30px;
+}
+
+.footer__quick-links ul li{
+   background: transparent;
+}
+
+
+.footer__quick-links ul li a:hover{
+   color: white;
+}
+
+.quick__links-title{
+    color: black;
+    font-size: 1.1rem;
+}
+
+.footer__copyright{
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    text-align: center;
+}

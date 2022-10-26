@@ -5,6 +5,12 @@
 }
 */
 
+
+.hero__section{
+   
+
+}
+
 .hero__section h2{
    color: black;
    font-size: 2.5rem;
@@ -39,4 +45,27 @@ bouton a:hover{
     border-radius: 0.8rem;
     height: 25rem ;
     width: 50%;
+ }
+
+ /*---------counter----------*/
+
+ .timer__count{
+    background-color: blue;
+    height: 300px;
+
+ }
+
+ .timer__count img {
+    width: 70% !important;
+    height: 70% !important;
+    object-fit: contain;
+ }
+
+ .store__btn{
+    background-color: white;
+    
+ }
+
+ .store__btn a:hover{
+    color: brown;
  }

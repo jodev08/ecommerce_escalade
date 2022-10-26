@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import Services from '../components/services/Services'
 import ProductList from '../components/Ui/ProductList'
 import products from '../assets/data/products'
-
+import counterImg from '../assets/timer_img.jpg'
+import Clock from '../components/Ui/Clock'
 
 import CA1 from '../assets/carousel/carousel1.jpg'
 import CA2 from '../assets/carousel/carousel2.jpg'
@@ -21,7 +22,14 @@ const Home = () => {
 
   const [trendingProducts, setTrendingProducts] = useState([]) 
   const [bestProducts, setBestProducts] = useState([]) 
+  const [mobileProducts, setMobileProducts] = useState([]) 
+  const [WirelessProducts, setWirelessProducts] = useState([]) 
+
   const year = new Date().getFullYear()
+
+  {/*------------*/}
+
+
   
   useEffect(() =>{
     const filteredTrendingProducts = products.filter((item)  =>item.category === 'shoes'
@@ -30,8 +38,16 @@ const Home = () => {
     const filteredBestProducts = products.filter((item)  =>item.category === 'accessoire'
     );
 
+    const filteredMobileProducts = products.filter((item)  =>item.category === 'helmet'
+    );
+
+    const filteredWirelessProducts = products.filter((item)  =>item.category === 'clothes'
+    );
+
     setTrendingProducts(filteredTrendingProducts)
     setBestProducts(filteredBestProducts)
+    setMobileProducts(filteredMobileProducts)
+    setWirelessProducts(filteredWirelessProducts)
   
     },[]);
   
@@ -47,7 +63,6 @@ const Home = () => {
                     
                     </p>
                     <h2>Produit tendance</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nesciunt, dolorum dicta quo pariatur possimus, ut molestiae fuga aperiam cumque quidem maiores quasi eveniet doloribus. Illo harum sunt quos cum?</p>
                     
                     <button>
                       <Link to="/shop">SHOP</Link>
@@ -92,11 +107,11 @@ const Home = () => {
            </section>
 
            <Services/>
-
+          {/*---------*/}
            <section className='trending__products'>
             <Container>
               <Row>
-                <Col lg='12' className='text-center'>
+                <Col lg='12' className='text-center mb-5'>
                   <h2 className='section__title'>
                     Produit tendance 
                   </h2>
@@ -105,10 +120,10 @@ const Home = () => {
               </Row>
             </Container>
            </section>
-
+          {/*---------*/}
            <section className='best__sales'>
            <Row>
-                <Col lg='12' className='text-center'>
+                <Col lg='12' className='text-center mb-5'>
                   <h2 className='section__title'>
                     meilleurs ventes
                   </h2>
@@ -118,6 +133,73 @@ const Home = () => {
 
 
            </section>
+          {/*---------*/}
+           <section className='timer__count'>
+             <Container>
+              <Row>
+
+              <Col lg='6' md='6'>
+                <div className='clock__top-content'>
+                  <h4 className='text-white fs-6 mb-2'>Offre limitée</h4>
+                </div>
+
+                <Clock/>
+
+                <button className='buy__btn store__btn'>
+                  <Link to="/shop">visite shop</Link>
+                </button>
+              </Col>
+
+                
+              <Col lg='6' md='6'>
+                <img src={counterImg} alt='counter_img' className='text-end' />
+              </Col>
+
+              </Row>
+
+             </Container>
+           </section>
+          {/*---------*/}
+
+           <section className='new__arrivals'>
+            <Container>
+            <Row>
+                <Col lg='12' className='text-center mb-5'>
+                  <h2 className='section__title'>
+                    nouvelle arrivage
+                  </h2>
+                </Col>
+                <ProductList data={mobileProducts}/>
+                
+              </Row>
+
+
+            </Container>
+            
+
+           </section>
+
+             {/*---------*/}
+            
+             <section className='popular__category'>
+            <Container>
+            <Row>
+                <Col lg='12' className='text-center mb-5'>
+                  <h2 className='section__title'>
+                    categorie populaire
+                  </h2>
+                </Col>
+                <ProductList data={WirelessProducts}/>
+                
+              </Row>
+
+
+            </Container>
+            
+
+           </section>
+
+          
 
           
 
